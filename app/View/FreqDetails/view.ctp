@@ -68,22 +68,22 @@
 		<th><?php echo __('Freq Detail Id'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
-	<?php foreach ($freqDetail['TravelDetail'] as $travelDetail): ?>
+	<?php //foreach ($freqDetail['TravelDetail'] as $travelDetail): ?>
 		<tr>
-			<td><?php echo $travelDetail['id']; ?></td>
-			<td><?php echo $travelDetail['bus_id']; ?></td>
-			<td><?php echo $travelDetail['route_id']; ?></td>
-			<td><?php echo $travelDetail['depature_time']; ?></td>
-			<td><?php echo $travelDetail['arrival_time']; ?></td>
-			<td><?php echo $travelDetail['fare']; ?></td>
-			<td><?php echo $travelDetail['freq_detail_id']; ?></td>
+			<td><?php echo $freqDetail['TravelDetail']['id']; ?></td>
+			<td><?php echo $freqDetail['TravelDetail']['bus_id']; ?></td>
+			<td><?php echo $freqDetail['TravelDetail']['route_id']; ?></td>
+			<td><?php echo $freqDetail['TravelDetail']['depature_time']; ?></td>
+			<td><?php echo $freqDetail['TravelDetail']['arrival_time']; ?></td>
+			<td><?php echo $freqDetail['TravelDetail']['fare']; ?></td>
+			<td><?php echo $freqDetail['TravelDetail']['freq_detail_id']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'travel_details', 'action' => 'view', $travelDetail['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'travel_details', 'action' => 'edit', $travelDetail['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'travel_details', 'action' => 'delete', $travelDetail['id']), null, __('Are you sure you want to delete # %s?', $travelDetail['id'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'travel_details', 'action' => 'view', $freqDetail['TravelDetail']['id'])); ?>
+				<?php echo $this->Html->link(__('Edit'), array('controller' => 'travel_details', 'action' => 'edit', $freqDetail['TravelDetail']['id'])); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'travel_details', 'action' => 'delete', $freqDetail['TravelDetail']['id']), null, __('Are you sure you want to delete # %s?', $freqDetail['TravelDetail']['id'])); ?>
 			</td>
 		</tr>
-	<?php endforeach; ?>
+	<?php //endforeach; ?>
 	</table>
 <?php endif; ?>
 

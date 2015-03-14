@@ -39,12 +39,19 @@
 		<td class="actions">
 			<?php //echo $this->Form->postLink(__('Select Seat'), array('controller' => 'reserves','action' =>'add', $route['Route']['id']), null); ?>
 			<?php 
-			echo $this->Html->link('Select Seat', 
+			/*echo $this->Html->link('Select Seat', 
 					array('controller' => 'reservation_details','action'=>'seats', 
 					$freq_detail['TravelDetail']['id'],
 					$this->request->data['Route']['query_date']
-					)); 
+					)); */
 			?>
+			<?php echo $this->Form->postLink(__('Select Seat'), array(
+                                     'controller' => 'reservation_details',
+                                     'action' => 'register',
+                                     'travel_id' => $freq_detail['TravelDetail']['id'],                                                     
+                                     'travel_date' => $this->request->data['Route']['query_date'],
+                                 ),null  
+                                ); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

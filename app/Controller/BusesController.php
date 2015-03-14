@@ -84,7 +84,9 @@ class BusesController extends AppController {
 			$this->request->data = $this->Bus->find('first', $options);
 		}
 		$busTypes = $this->Bus->BusType->find('list');
+		$agencies = $this->Bus->Agency->find('list');
 		$this->set(compact('busTypes'));
+		$this->set(compact('agencies'));
 	}
 
 /**

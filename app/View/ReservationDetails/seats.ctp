@@ -4,30 +4,73 @@ echo $this->Html->script('jquery');
 echo $this->Html->script('jquery.seat-charts');
 
 $unavailable = $reserved_seats;
+
+//pr($travel_detail);
 ?>
 <div class="search">
+<p><?php echo h($travel_detail['Bus']['Agency']['name']);?>(<?php echo h($travel_detail['Bus']['BusType']['name']);?>)</p>
+<p>Bus: <?php echo h($travel_detail['Bus']['bus_reg_no']);?></p>
+<p>Route:
+<?php 
+	foreach($cities as $city):
+		if($travel_detail['Route']['from_city']==$city['City']['id']){
+		   $from = $city['City']['name'];
+			break;
+		}
+	endforeach;
+	echo h($from);
+?>
+ -
+<?php
+	foreach($cities as $city):
+		 if($travel_detail['Route']['to_city']==$city['City']['id']){
+			 $to = $city['City']['name'];
+		 break;
+		 }
+		endforeach;
+		echo h($to)
+?>
+</p>
+<p>Date: <?php echo h($depature_date);?></p>
+<p>Departure Time: <?php echo $travel_detail['TravelDetail']['depature_time']?></p>
+<p>Arrival Time: <?php echo $travel_detail['TravelDetail']['arrival_time']?></p>
+</div>
+	
+<div class="seat-plan">
 
-<p>Bus:<?php echo $businfo['Bus']['name']?></p>
-<p>Route:<?php echo $businfo['Route']['from_location']?> - <?php echo $businfo['Route']['to_location']?></p>
-<p>Date:<?php echo $businfo['Route']['depart_date']?></p>
-<p>Time:<?php echo $businfo['Route']['depart_time']?></p>
-
-<?php echo $this->Form->create('Route');?>
 <div id="legend"></div>
-	<div id="seat-map"><div class="front-indicator">Front</div></div>
-				
-	<div class="booking-details">
-		<h2>Booking Details</h2>	
+
+<div style="clear:both"></div>
+
+	<div id="seat-map" style="float:left">
+		<div class="front-indicator">Front</div>
+	</div>
+	
+	<div class="booking-details" style="float:left">
+<?php echo $this->Form->create('ReservationDetail',array('controller'=>'reservation_details','action'=>'reservation/seats'));?>			
+    	<h2>Booking Details</h2>	
 		<p>Seat: </p>
 		<ul id="selected-seats"></ul>
 		<p>Total Tickets: <span id="counter">0</span></p>
-		
-		<input name="selected_seats" class="selected_seats" id="selected_seats" type="hidden">
-		<input name="route_id" class="route_id" id="route_id" type="hidden" value="<?php echo $route_id ?>">
-		<button class="checkout-button">Continue &raquo;</button>
+		<p>Total Price: <span id="total">0</span></p>
+
+<?php 
+			echo $this->Form->input('PurchaseDetail.total_price',array(
+									'type'=>'hidden',
+									'id'=>'total_price',
+									'class'=>'total_price'));
+?>		
+<?php 
+			echo $this->Form->input('ReservationDetail.selected_seats',array(
+									'type'=>'hidden',
+									'id'=>'selected_seats','
+									class'=>'selected_seats'));
+?>	
+	
+<?php echo $this->Form->end('Continue >>');?>		
 	</div> 
-		 
-		<?php echo $this->Form->end();?>
+	
+	<div style="clear:both"></div>
 </div>
 
 <script>
@@ -37,34 +80,35 @@ $unavailable = $reserved_seats;
 				var $cart = $('#selected-seats'),
 					$counter = $('#counter'),
 					$total = $('#total'),
+					$total_price = $('#total_price'),
 					sc = $('#seat-map').seatCharts({
 					map: [
-						'_eeeeeeee',
-						'_eeeeeeee',
-						'________e',
-						'eeeeeeeee',
-						'eeeeeeeee',
+						'_e[A1]e[A3]e[A5]e[A7]e[A9]e[A11]e[A13]e[A15]',
+						'_e[A2]e[A4]e[A6]e[A8]e[A10]e[A12]e[A14]e[A16]',
+						'________e[C1]',
+						'e[B2]e[B4]e[B6]e[B8]e[B10]e[B12]e[B14]e[B16]e[B18]',
+						'e[B1]e[B3]e[B5]e[B7]e[B9]e[B11]e[B13]e[B15]e[B17]',
 					],
-					/*seats: {
-						f: {
+					seats: {
+					/*	f: {
 							price   : 100,
 							classes : 'first-class', //your custom CSS class
 							category: 'First Class'
-						},
+						},*/
 						e: {
-							price   : 40,
-							classes : 'economy-class', //your custom CSS class
-							category: ''
+							price   : <?php echo $travel_detail['TravelDetail']['fare']?>,
+							//classes : 'economy-class', //your custom CSS class
+							//category: ''
 						}					
 					
-					},*/
+					},
 
 					naming : {
 						top : false,
 						left : false,
 						//columns: ['1', '2', '3', '4','5','6','7','8','9'],
 						//rows: ['1', '3', '5', '7','9','11','13','15','17'],
-						rows: ['A','A','C','B','B'],
+						//rows: ['A','A','C','B','B'],
 						getLabel : function (character, row, column) {
 
 							//return row + '' + firstSeatLabel++;
@@ -96,7 +140,7 @@ $unavailable = $reserved_seats;
 								.attr('id', 'cart-item-'+this.settings.id)
 								.data('seatId', this.settings.id)
 								.appendTo($cart);*/
-							$('<li>'+this.settings.id+'</li>')
+							$('<li>'+this.settings.id+'<a href="#" class="cancel-cart-item">x</a></li>')
 								.attr('id', 'cart-item-'+this.settings.id)
 								.data('seatId', this.settings.id)
 								.appendTo($cart);
@@ -109,7 +153,9 @@ $unavailable = $reserved_seats;
 							 */
 							$counter.text(sc.find('selected').length+1);
 							$total.text(recalculateTotal(sc)+this.data().price);
-						
+							var total_price = recalculateTotal(sc)+this.data().price;
+							$('#total_price').val(total_price);
+							
 							if (seat == '') {$('#selected_seats').val(this.settings.id);}
 							else{$('#selected_seats').val(seat +','+this.settings.id);}
 
@@ -120,7 +166,9 @@ $unavailable = $reserved_seats;
 							$counter.text(sc.find('selected').length-1);
 							//and total
 							$total.text(recalculateTotal(sc)-this.data().price);
-						
+							var total_price = recalculateTotal(sc)-this.data().price;
+							$('#total_price').val(total_price);
+							
 							//remove the item from our cart
 							$('#cart-item-'+this.settings.id).remove();
 							

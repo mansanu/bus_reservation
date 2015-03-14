@@ -99,7 +99,7 @@
 		<th><?php echo __('Travel Detail Id'); ?></th>
 		<th><?php echo __('Purchase Detail Id'); ?></th>
 		<th><?php echo __('Reserved Date'); ?></th>
-		<th><?php echo __('No Seat'); ?></th>
+		<th><?php echo __('Seat no.'); ?></th>
 		<th><?php echo __('Depature Date'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
@@ -110,7 +110,7 @@
 			<td><?php echo $reservationDetail['travel_detail_id']; ?></td>
 			<td><?php echo $reservationDetail['purchase_detail_id']; ?></td>
 			<td><?php echo $reservationDetail['reserved_date']; ?></td>
-			<td><?php echo $reservationDetail['no_seat']; ?></td>
+			<td><?php echo $reservationDetail['seat_no']; ?></td>
 			<td><?php echo $reservationDetail['depature_date']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'reservation_details', 'action' => 'view', $reservationDetail['id'])); ?>

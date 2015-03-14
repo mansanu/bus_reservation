@@ -15,7 +15,7 @@ class FreqDetail extends AppModel {
  *
  * @var array
  */
-	public $hasMany = array(
+	public $hasOne = array(
 		'TravelDetail' => array(
 			'className' => 'TravelDetail',
 			'foreignKey' => 'freq_detail_id',
