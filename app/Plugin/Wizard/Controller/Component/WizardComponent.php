@@ -42,7 +42,7 @@ class WizardComponent extends Component {
  * @var boolean
  * @access public
  */
-	public $autoReset = true;
+	public $autoReset = false;
 /**
  * If no processCallback() exists for the current step, the component will automatically
  * validate the model data against the models included in the controller's uses array.

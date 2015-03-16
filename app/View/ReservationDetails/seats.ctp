@@ -5,8 +5,11 @@ echo $this->Html->script('jquery.seat-charts');
 
 $unavailable = $reserved_seats;
 
-//pr($travel_detail);
+$selected_seats = @explode(',',$selected_seat_no);
+//$selected_seats = "'".@implode("','",$selected_seats)."'";
+
 ?>
+
 <div class="search">
 <p><?php echo h($travel_detail['Bus']['Agency']['name']);?>(<?php echo h($travel_detail['Bus']['BusType']['name']);?>)</p>
 <p>Bus: <?php echo h($travel_detail['Bus']['bus_reg_no']);?></p>
@@ -66,8 +69,9 @@ $unavailable = $reserved_seats;
 									'id'=>'selected_seats','
 									class'=>'selected_seats'));
 ?>	
-	
-<?php echo $this->Form->end('Continue >>');?>		
+<button id="cancel" name="Cancel">Cancel</button>	
+<?php echo $this->Form->end('Continue >>');?>
+ 
 	</div> 
 	
 	<div style="clear:both"></div>
@@ -134,7 +138,7 @@ $unavailable = $reserved_seats;
 						var seat = $('#selected_seats').val();
 						
 						if (this.status() == 'available') {
-						
+							
 							//let's create a new <li> which we'll add to the cart items
 							/*$('<li>Seat # '+this.settings.label+' <a href="#" class="cancel-cart-item">[cancel]</a></li>')
 								.attr('id', 'cart-item-'+this.settings.id)
@@ -144,7 +148,6 @@ $unavailable = $reserved_seats;
 								.attr('id', 'cart-item-'+this.settings.id)
 								.data('seatId', this.settings.id)
 								.appendTo($cart);
-				
 							/*
 							 * Lets update the counter and total
 							 *
@@ -157,12 +160,25 @@ $unavailable = $reserved_seats;
 							$('#total_price').val(total_price);
 							
 							if (seat == '') {$('#selected_seats').val(this.settings.id);}
-							else{$('#selected_seats').val(seat +','+this.settings.id);}
+							else{
+								
+							if($("#selected_seats").val().indexOf(this.settings.id + ',') > -1){
+								$('#selected_seats').val($('#selected_seats').val().replace(this.settings.id + ',',this.settings.id + ','));
+							}
+							else if($("#selected_seats").val().indexOf(','+this.settings.id) > -1){
+								$('#selected_seats').val($('#selected_seats').val().replace(','+this.settings.id,','+this.settings.id));
+							}
+							else if($("#selected_seats").val().indexOf(this.settings.id) > -1){
+								$('#selected_seats').val($('#selected_seats').val().replace(this.settings.id,this.settings.id));
+							}
+							else{$('#selected_seats').val(seat +','+this.settings.id);}	
+							}
 
 							
 							return 'selected';
 						} else if (this.status() == 'selected') {
 							//update the counter
+					
 							$counter.text(sc.find('selected').length-1);
 							//and total
 							$total.text(recalculateTotal(sc)-this.data().price);
@@ -201,7 +217,15 @@ $unavailable = $reserved_seats;
 				//let's pretend some seats have already been booked
 				sc.get([<?php echo $unavailable ?>]).status('unavailable');
 
-		
+					<?php
+					if(is_array($selected_seats)){	
+						foreach($selected_seats as $selected_seat):
+					?>
+						sc.get('<?php echo $selected_seat?>').click();
+					<?php 
+						endforeach;
+					}
+					?>
 		});
 
 		function recalculateTotal(sc) {

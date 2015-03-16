@@ -35,7 +35,18 @@ class ReservationDetailsController extends AppController {
 	}
 	public function _prepareSeats() {
 		
+		$selected_seat_no = array();
+		$wizardData = $this->Wizard->read();
+		if(is_array($wizardData)){	
+			extract($wizardData);
+			$selected_seat_no = $seats['ReservationDetail']['selected_seats'];
+		}
+	
+		//if(isset($seats['ReservationDetail']['selected_seats']))
+		$this->set('selected_seat_no',$selected_seat_no);
+		
 		$travel_detail_id = $this->Session->read('travel_detail_id');
+		
 		$depature_date = $this->Session->read('depature_date');
 		
 		$date = explode('-',$depature_date);
@@ -62,6 +73,7 @@ class ReservationDetailsController extends AppController {
 											'AND'=>array('ReservationDetail.travel_detail_id'=>$travel_detail_id),
 												   array('ReservationDetail.depature_date'=>$depature_date)
 												   )));
+		
 		$reserved_seats = "'".implode("','",$reserved_seats)."'";
 		$this->set('reserved_seats', $reserved_seats);
 		
@@ -77,7 +89,7 @@ class ReservationDetailsController extends AppController {
 	}
 	function _preparePassenger()
 	{
-		
+		//$this->Wizard->reset();
 	}
 	function _processPassenger()
 	{

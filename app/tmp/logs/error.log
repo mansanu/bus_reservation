@@ -1787,3 +1787,569 @@ Stack Trace:
 #8 C:\wamp\www\bus_reservation\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ReservationDetailsController), Object(CakeRequest))
 #9 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2015-03-15 10:03:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-15 10:03:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-15 10:03:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-15 10:03:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-15 10:03:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-15 10:03:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_dadada_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-15 10:10:47 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 41]
+2015-03-15 10:10:47 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-16
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 41, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 41, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:11:29 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 42]
+2015-03-15 10:11:29 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-16
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:11:55 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:11:55 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-16
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:11:59 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:11:59 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-16
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:12:22 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:12:22 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-16
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:12:48 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:12:48 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-16
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:14:19 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:14:19 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/seats
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:14:31 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:14:31 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-16
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:14:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_65_ffffff_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-15 10:14:43 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:14:43 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-09
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:14:58 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:14:58 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-09
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:15:57 Error: Fatal Error (4): syntax error, unexpected '$travel_detail_id' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 43]
+2015-03-15 10:15:57 Error: [FatalErrorException] syntax error, unexpected '$travel_detail_id' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-09
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 43, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:17:16 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 42]
+2015-03-15 10:17:16 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-09
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:17:19 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 42]
+2015-03-15 10:17:19 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+Request URL: /bus_reservation/reservation_details/reservation/6/2015-03-09
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 42, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-15 10:18:56 Error: Fatal Error (1): Call to undefined function issset() in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 40]
+2015-03-15 10:18:56 Error: [FatalErrorException] Call to undefined function issset()
+Request URL: /bus_reservation/reservation_details/reservation/seats
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wamp\\www\\bus...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wamp\\www\\bus...', 40, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wamp\\www\\bus...', 40, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-16 11:16:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 11:16:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 11:16:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 11:16:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 11:16:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 11:16:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_dadada_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 11:19:02 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) in [C:\wamp\www\bus_reservation\app\Controller\ReservationDetailsController.php, line 44]
+2015-03-16 11:19:02 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION)
+Request URL: /bus_reservation/reservation_details/reservation/seats
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 44)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 44, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 44, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-16 12:09:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 12:09:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 12:09:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 12:09:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 12:09:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 12:09:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_dadada_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 12:14:18 Error: Fatal Error (4): syntax error, unexpected '}', expecting ';' in [C:\wamp\www\bus_reservation\app\View\ReservationDetails\seats.ctp, line 18]
+2015-03-16 12:14:18 Error: [FatalErrorException] syntax error, unexpected '}', expecting ';'
+Request URL: /bus_reservation/reservation_details/reservation/seats
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 18)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 18, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 18, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-16 12:26:04 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\wamp\www\bus_reservation\app\View\ReservationDetails\seats.ctp, line 221]
+2015-03-16 12:26:04 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /bus_reservation/reservation_details/reservation/seats
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 221)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 221, Array)
+#2 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\wamp\\www\\bus...', 221, Array)
+#3 C:\wamp\www\bus_reservation\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-03-16 12:41:56 Error: [MissingControllerException] Controller class RController could not be found.
+Exception Attributes: array (
+  'class' => 'RController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/r
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:07:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:07:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:07:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:07:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:07:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:07:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_dadada_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:22:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:22:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:22:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:22:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:22:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:22:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_dadada_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:34:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:35:53 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:35:53 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:35:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:35:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 13:35:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_dadada_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 14:04:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_flat_75_ffffff_40x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 14:04:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 14:04:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-icons_222222_256x240.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 14:04:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 14:04:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-03-16 14:04:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /bus_reservation/css/images/ui-bg_glass_75_dadada_1x400.png
+Stack Trace:
+#0 C:\wamp\www\bus_reservation\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

@@ -9,6 +9,8 @@
 		echo $this->Form->input('Passenger.phone_no');
 		echo $this->Form->input('Passenger.mobile');
 	?>
+	<button id="cancel" name="Cancel">Cancel</button>
 	</fieldset>
 <?php echo $this->Form->end(__('Continue >>')); ?>
+
 </div>
