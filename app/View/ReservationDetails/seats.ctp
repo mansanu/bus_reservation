@@ -6,71 +6,107 @@ echo $this->Html->script('jquery.seat-charts');
 $unavailable = $reserved_seats;
 
 $selected_seats = @explode(',',$selected_seat_no);
-//$selected_seats = "'".@implode("','",$selected_seats)."'";
 
 ?>
 
-<div class="search">
-<p><?php echo h($travel_detail['Bus']['Agency']['name']);?>(<?php echo h($travel_detail['Bus']['BusType']['name']);?>)</p>
-<p>Bus: <?php echo h($travel_detail['Bus']['bus_reg_no']);?></p>
-<p>Route:
-<?php 
-	foreach($cities as $city):
-		if($travel_detail['Route']['from_city']==$city['City']['id']){
-		   $from = $city['City']['name'];
-			break;
-		}
-	endforeach;
-	echo h($from);
-?>
- -
-<?php
-	foreach($cities as $city):
-		 if($travel_detail['Route']['to_city']==$city['City']['id']){
-			 $to = $city['City']['name'];
-		 break;
-		 }
-		endforeach;
-		echo h($to)
-?>
-</p>
-<p>Date: <?php echo h($depature_date);?></p>
-<p>Departure Time: <?php echo $travel_detail['TravelDetail']['depature_time']?></p>
-<p>Arrival Time: <?php echo $travel_detail['TravelDetail']['arrival_time']?></p>
+<div class="col-lg-4">
+  <div class="panel panel-info">
+ 	<div class="panel-heading">Bus Information</div>
+ 	  <div class="panel-body">
+		<p>
+			<?php echo h($travel_detail['Bus']['Agency']['name']);?>
+			(<?php echo h($travel_detail['Bus']['BusType']['name']);?>)
+
+		</p>
+		<p>Bus no.: <?php echo h($travel_detail['Bus']['bus_reg_no']);?></p>
+
+		<p>Route:
+		<?php 
+			foreach($cities as $city):
+				if($travel_detail['Route']['from_city']==$city['City']['id']){
+				   $from = $city['City']['name'];
+					break;
+				}
+			endforeach;
+			echo h($from);
+		?>
+	 -
+		<?php
+			foreach($cities as $city):
+			 if($travel_detail['Route']['to_city']==$city['City']['id']){
+				 $to = $city['City']['name'];
+			 break;
+			 }
+			endforeach;
+			echo h($to)
+		?>
+		</p>
+
+		<p>Departure Date: <?php echo h($depature_date);?></p>
+		<p>Departure Time: <?php echo $travel_detail['TravelDetail']['depature_time']?></p>
+		<p>Arrival Time: <?php echo $travel_detail['TravelDetail']['arrival_time']?></p>
+		<p>Ticket Price: <?php echo $travel_detail['TravelDetail']['fare']?></p>
+		</div>
+	</div>
 </div>
-	
-<div class="seat-plan">
 
-<div id="legend"></div>
+<div class="col-lg-4">
+  <div class="panel panel-warning">
+ 	<div class="panel-heading">Other Features</div>
+ 	  <div class="panel-body">
+
+		<?php foreach($otherFeatures['OtherFeature'] As $other_feature): ?>
+				
+				<p><?php echo $other_feature['name'] ?></p>
+				
+				<?php foreach($other_feature['PassengerType'] AS $fare): ?>
+
+			 			<p>&nbsp;&nbsp;<?php echo $fare['name'].' - '.$fare['OtherFeaturesPassengerType']['fare']?></p>
+
+				  <?php endforeach; ?>
+
+				<?php endforeach; ?>
+	   </div>
+	</div>
+</div>
 
 <div style="clear:both"></div>
 
-	<div id="seat-map" style="float:left">
-		<div class="front-indicator">Front</div>
-	</div>
-	
-	<div class="booking-details" style="float:left">
-<?php echo $this->Form->create('ReservationDetail',array('controller'=>'reservation_details','action'=>'reservation/seats'));?>			
-    	<h2>Booking Details</h2>	
-		<p>Seat: </p>
-		<ul id="selected-seats"></ul>
-		<p>Total Tickets: <span id="counter">0</span></p>
-		<p>Total Price: <span id="total">0</span></p>
+<div class="col-lg-7">
+<h2>Select Seats</h2>	
+  <div id="legend"></div>
 
-<?php 
-			echo $this->Form->input('PurchaseDetail.total_price',array(
-									'type'=>'hidden',
-									'id'=>'total_price',
-									'class'=>'total_price'));
-?>		
-<?php 
+  <div style="clear:both"></div>
+
+  <div id="seat-map" style="float:left"><div class="front-indicator">Front</div></div>
+
+</div
+	
+<div class="col-lg-5">
+
+<?php echo $this->Form->create('ReservationDetail',array('controller'=>'reservation_details','action'=>'reservation/seats'));?>			
+	<h2>Selected Seats</h2>	
+	<p>Seat: </p>
+	<ul id="selected-seats"></ul>
+	<p>Total Tickets: <span id="counter">0</span></p>
+	<!--<p>Total Price: <span id="total">0</span></p>-->
+
+	<?php 
+		echo $this->Form->input('PurchaseDetail.total_price',array(
+										'type'=>'hidden',
+										'id'=>'total_price',
+										'class'=>'total_price'));
+	?>		
+	<?php 
 			echo $this->Form->input('ReservationDetail.selected_seats',array(
-									'type'=>'hidden',
-									'id'=>'selected_seats','
-									class'=>'selected_seats'));
-?>	
-<button id="cancel" name="Cancel">Cancel</button>	
-<?php echo $this->Form->end('Continue >>');?>
+										'type'=>'hidden',
+										'id'=>'selected_seats','
+										class'=>'selected_seats'));
+	?>
+
+ <button class="btn btn-primary">Continue <i class="glyphicon glyphicon-chevron-right"></i></button>
+<button id="cancel" name="Cancel" class="btn btn-danger"><i class="glyphicon glyphicon-remove-circle"></i> Cancel</button>	
+<?php echo $this->Form->end();?>
  
 	</div> 
 	
@@ -144,7 +180,7 @@ $selected_seats = @explode(',',$selected_seat_no);
 								.attr('id', 'cart-item-'+this.settings.id)
 								.data('seatId', this.settings.id)
 								.appendTo($cart);*/
-							$('<li>'+this.settings.id+'<a href="#" class="cancel-cart-item">x</a></li>')
+							$('<li role="presentation">'+this.settings.id+' <span class="badge"><a href="#" class="cancel-cart-item">x</a></span></li>')
 								.attr('id', 'cart-item-'+this.settings.id)
 								.data('seatId', this.settings.id)
 								.appendTo($cart);

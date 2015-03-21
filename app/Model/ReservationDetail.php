@@ -6,6 +6,7 @@ App::uses('AppModel', 'Model');
  * @property Passenger $Passenger
  * @property TravelDetail $TravelDetail
  * @property PurchaseDetail $PurchaseDetail
+ * @property PassengerType $PassengerType
  */
 class ReservationDetail extends AppModel {
 
@@ -35,6 +36,13 @@ class ReservationDetail extends AppModel {
 		'PurchaseDetail' => array(
 			'className' => 'PurchaseDetail',
 			'foreignKey' => 'purchase_detail_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'PassengerType' => array(
+			'className' => 'PassengerType',
+			'foreignKey' => 'passenger_type_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

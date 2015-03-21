@@ -66,10 +66,13 @@ class TravelDetailsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The travel detail could not be saved. Please, try again.'));
 			}
+			
+			
 		}
 		$buses = $this->TravelDetail->Bus->find('list');
 		$routes = $this->TravelDetail->Route->find('list');
-		$this->set(compact('buses', 'routes'));
+		$otherFeatures = $this->TravelDetail->OtherFeature->find('list');
+		$this->set(compact('buses', 'routes','otherFeatures'));
 	}
 
 /**
@@ -99,7 +102,9 @@ class TravelDetailsController extends AppController {
 		$buses = $this->TravelDetail->Bus->find('list');
 		$routes = $this->TravelDetail->Route->find('list');
 		$freqDetails = $this->TravelDetail->FreqDetail->find('all');
-		$this->set(compact('buses', 'routes', 'freqDetails'));
+		$otherFeatures = $this->TravelDetail->OtherFeature->find('list');
+
+		$this->set(compact('buses', 'routes', 'freqDetails','otherFeatures'));
 	}
 
 /**

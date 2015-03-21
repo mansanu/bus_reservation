@@ -115,6 +115,7 @@ class RoutesController extends AppController {
 	public function search()
 	{	
 		//route check 
+		$this->layout='user';
 		$routes = $this->Route->find('first',array(
 										'conditions'=>array(
 											'AND'=>array('Route.from_city'=>$this->request->data['Route']['from_city']),
@@ -126,20 +127,25 @@ class RoutesController extends AppController {
 		$this->Route->TravelDetail->recursive = 2;
 		
 		$check_freq=array();
-		foreach($routes['TravelDetail'] as $travel_detail){
+
+		if(!empty($routes['TravelDetail'])){
 			
-			$this->Route->TravelDetail->Bus->unbindModel( array('hasMany' => array('TravelDetail')) );
-			$this->Route->TravelDetail->Route->unbindModel( array('hasMany' => array('TravelDetail')) );
-			$this->Route->TravelDetail->FreqDetail->unbindModel( array('hasMany' => array('TravelDetail')) );
-		
-			$check_freq[] = $this->Route->TravelDetail->find('first',array(
-										'conditions'=>array(
-											'AND'=>array('FreqDetail.id'=>$travel_detail['freq_detail_id']),
-												   array('FreqDetail.'.$this->request->data['Route']['weekday']=>1)
-											)
-										));
+			foreach($routes['TravelDetail'] as $travel_detail){
 			
+				$this->Route->TravelDetail->Bus->unbindModel( array('hasMany' => array('TravelDetail')) );
+				$this->Route->TravelDetail->Route->unbindModel( array('hasMany' => array('TravelDetail')) );
+				$this->Route->TravelDetail->FreqDetail->unbindModel( array('hasMany' => array('TravelDetail')) );
+			
+				$check_freq[] = $this->Route->TravelDetail->find('first',array(
+											'conditions'=>array(
+												'AND'=>array('FreqDetail.id'=>$travel_detail['freq_detail_id']),
+													   array('FreqDetail.'.$this->request->data['Route']['weekday']=>1)
+												)
+											));
+			
+			}
 		}
+
 		$freq_details=array();
 		
 		$freq_details = array_filter(array_map('array_filter', $check_freq));//filter empty array

@@ -58,6 +58,8 @@ class PagesController extends AppController {
 	
 	public function index()
 	{
+		
+		$this->layout='user';
 		$this->loadModel('City');
 		$this->set('cities',$this->City->find('list'));
 	}

@@ -7,6 +7,7 @@ App::uses('AppModel', 'Model');
  * @property Route $Route
  * @property FreqDetail $FreqDetail
  * @property ReservationDetail $ReservationDetail
+ * @property OtherFeature $OtherFeature
  */
 class TravelDetail extends AppModel {
 
@@ -60,6 +61,28 @@ class TravelDetail extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		)
+	);
+
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
+		'OtherFeature' => array(
+			'className' => 'OtherFeature',
+			'joinTable' => 'travel_details_other_features',
+			'foreignKey' => 'travel_detail_id',
+			'associationForeignKey' => 'other_feature_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
 		)
 	);
 

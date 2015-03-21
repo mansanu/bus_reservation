@@ -1,11 +1,18 @@
 <?php
+$this->assign('title', 'Bus Reservation');
 echo $this->Html->script('jquery-ui');
 echo $this->Html->css('jquery-ui');
+
+echo $this->Html->css('select2');
+echo $this->Html->script('select2');
+
 ?>
 <script>
   $(function() {
+  	var dateToday = new Date();
     $( "#datepicker" ).datepicker({
 		dateFormat: 'yy-mm-dd',
+		minDate: dateToday,
 		onSelect: function(dateText, inst) {
 			//var day = dateText.split("/"); 
 			 var date = $(this).datepicker('getDate');
@@ -24,26 +31,82 @@ echo $this->Html->css('jquery-ui');
 		});
   });
   </script>
-<h2>BUS BOOKING</h2>
 
-<div class="route form">
+<script type="text/javascript">
 
-<?php echo $this->Form->create('Route',array('url'=>'/routes/search')); ?>
-	<fieldset>
-		<legend><?php echo __('Book'); ?></legend>
-	<?php
-		echo $this->Form->input('from_city',array(
-									'type'=>'select',
-									'options'=>$cities
-									));
-		echo $this->Form->input('to_city',array(
-									'type'=>'select',
-									'options'=>$cities
-									));
-		echo $this->Form->input('query_date',array('id'=>'datepicker'));
-		echo $this->Form->input('weekday',array('id'=>'weekday','type'=>'hidden'));
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+ $(document).ready(function() {
 
+  $(".from_city").select2();
+  $(".to_city").select2();
+
+
+});
+
+</script>
+
+
+
+
+<div class="col-lg-4">
+ <div class="panel panel-primary">
+ 	<div class="panel-heading">Booking</div>
+ 	<div class="panel-body">
+		<?php echo $this->Form->create('Route',array('id'=>'search_form','url'=>'/routes/search')); ?>
+
+
+	    <div class="form-group">
+	    	<label for="inputEmail">From Address</label>
+			<?php
+				echo $this->Form->input('from_city',array(
+											'type'=>'select',
+											'label'=>false,
+											'class'=>'form-control from_city',
+											'options'=>$cities
+											));
+			?>
+		</div>
+
+		<div class="form-group">
+	    	<label for="inputEmail">To Address</label>
+			<?php
+				echo $this->Form->input('to_city',array(
+											'type'=>'select',
+											'label'=>false,
+											'class'=>'form-control to_city',
+											'options'=>$cities
+											));
+			?>
+		</div>
+
+		<div class="form-group">
+	    	<label for="inputEmail">Travel Date</label>
+		<?php 
+				echo $this->Form->input('query_date',array(
+									'id'=>'datepicker',
+									'label'=>false,
+									'class'=>'form-control',
+									'readonly'=>'readonly',
+									'required'=>'required'
+									));	
+		?>
+		</div>
+
+		<?php echo $this->Form->input('weekday',array('id'=>'weekday','type'=>'hidden')); ?>
+	
+		<button type="submit" class="btn btn-primary">Search Buses</button>
+
+		<?php echo $this->Form->end(); ?>
+
+	</div>
+  </div>
 </div>
+
+<script>
+var availableTags = [
+	{"value":"Some Name","id":1},{"value":"Some Othername","id":2}
+	
+];
+$( "#autocomplete" ).autocomplete({
+	source: availableTags
+});
+</script>

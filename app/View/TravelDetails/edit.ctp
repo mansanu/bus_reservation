@@ -38,6 +38,7 @@
 								'type' => 'checkbox',
 								'label'=>'Sat'
 						));
+		echo $this->Form->input('OtherFeature');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

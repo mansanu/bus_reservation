@@ -74,7 +74,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'snj_bus_reservation',
+		'database' => 'mybus',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

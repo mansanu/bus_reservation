@@ -88,4 +88,5 @@ li.seatCharts-legendItem {
 	font-size:14px; 
 	font-weight:bold; 
 	text-align:center
-} 
+}
+#selected-seats li a{color:#ffffff;}

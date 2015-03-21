@@ -51,6 +51,7 @@
 								'label'=>'Sat',
 								'hiddenField' => false
 						));
+	 echo $this->Form->input('OtherFeature');
 		
 	?>
 	</fieldset>

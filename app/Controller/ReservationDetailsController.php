@@ -17,7 +17,7 @@ class ReservationDetailsController extends AppController {
 	
 	function beforeFilter() {
 		parent::beforeFilter();
-		$this->Wizard->steps = array('seats', 'passenger');
+		$this->Wizard->steps = array('seats', 'passenger','review');
 		$this->Wizard->action = 'reservation';
 }
 
@@ -26,23 +26,28 @@ class ReservationDetailsController extends AppController {
 		$this->Wizard->process($step);
 	}
 	
-	public function register($travel_detail_id,$depature_date)
+	public function register($travel_detail_id,$depature_date) ///register travel_detail_id/depature_date and redirect
 	{
 		$this->Session->write('travel_detail_id', $travel_detail_id);
 		$this->Session->write('depature_date', $depature_date);
 		
 		return $this->redirect(array('action' => 'reservation'));
 	}
+
 	public function _prepareSeats() {
 		
+		$this->layout='user';
+
 		$selected_seat_no = array();
+
 		$wizardData = $this->Wizard->read();
+
 		if(is_array($wizardData)){	
 			extract($wizardData);
 			$selected_seat_no = $seats['ReservationDetail']['selected_seats'];
 		}
 	
-		//if(isset($seats['ReservationDetail']['selected_seats']))
+		
 		$this->set('selected_seat_no',$selected_seat_no);
 		
 		$travel_detail_id = $this->Session->read('travel_detail_id');
@@ -82,50 +87,163 @@ class ReservationDetailsController extends AppController {
 		
 		$this->loadModel('City');
 		$this->set('cities',$this->City->find('all'));
+		
+		//get the feature included
+		
+		$this->ReservationDetail->TravelDetail->unbindModel( array('hasMany' => array('ReservationDetail')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('FreqDetail')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('Bus')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('Route')));
+
+		 $otherFeatures = $this->ReservationDetail->TravelDetail->find('first',array(
+													'conditions'=>array('TravelDetail.id'=>$this->Session->read('travel_detail_id'))
+													));
+		
+		
+		$this->set(compact('otherFeatures',$otherFeatures['OtherFeature']));
 													
 	}
+
 	function _processSeats() {
 		return true;
 	}
+
 	function _preparePassenger()
 	{
-		//$this->Wizard->reset();
+		$this->layout='user';
+		$wizardData = $this->Wizard->read();
+	
+		extract($wizardData);
+		
+		$total_seats = explode(',',$wizardData['seats']['ReservationDetail']['selected_seats']);
+		
+		$passengerTypes = $this->ReservationDetail->TravelDetail->OtherFeature->PassengerType->find('list');
+		
+		$this->set(compact('total_seats','passengerTypes'));
 	}
 	function _processPassenger()
 	{
 		return true;
 	}
+
+	function _prepareReview()
+	{
+		$this->layout='user';
+		$wizardData = $this->Wizard->read();
+	
+		$this->set(compact('wizardData'));
+		extract($wizardData);
+
+				//get the total price of feature
+
+		$this->ReservationDetail->TravelDetail->unbindModel( array('hasMany' => array('ReservationDetail')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('FreqDetail')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('Bus')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('Route')));
+
+		//just to get other feature for this travel detail
+		$travelDetails = $this->ReservationDetail->TravelDetail->find('first',array(
+													'conditions'=>array('TravelDetail.id'=>$this->Session->read('travel_detail_id'))
+													));
+
+		//now get the total of feature 
+		
+		$total_feature_price = 0;
+
+		foreach($travelDetails['OtherFeature'] as $feature):
+
+			foreach($passenger['PassengerType']['id'] as $passenger_type):			
+				$fare = $this->ReservationDetail->TravelDetail->OtherFeature->OtherFeaturesPassengerType->find('first',array(
+									'conditions'=>array(
+									'AND'=>	array('OtherFeaturesPassengerType.other_feature_id'=>$feature['id']),
+											array('OtherFeaturesPassengerType.passenger_type_id'=>$passenger_type)
+									)));
+				
+				if(!empty($fare)){
+					$total_feature_price = $total_feature_price + $fare['OtherFeaturesPassengerType']['fare'];
+				}
+
+			endforeach;
+
+		endforeach;
+
+		$total_price = $seats['PurchaseDetail']['total_price']+$total_feature_price;
+		$this->set('total_price',$total_price);
+		
+	}
+
+	function _processReview()
+	{
+		return true;
+	}
+	
 	function _afterComplete() {
 
 		$wizardData = $this->Wizard->read();
 	
 		extract($wizardData);
 		
+		//get the total price of feature
+
+		$this->ReservationDetail->TravelDetail->unbindModel( array('hasMany' => array('ReservationDetail')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('FreqDetail')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('Bus')));
+		$this->ReservationDetail->TravelDetail->unbindModel( array('belongsTo' => array('Route')));
+
+		//just to get other feature for this travel detail
+		$travelDetails = $this->ReservationDetail->TravelDetail->find('first',array(
+													'conditions'=>array('TravelDetail.id'=>$this->Session->read('travel_detail_id'))
+													));
+
+		//now get the total of feature 
+		
+		$total_feature_price = 0;
+
+		foreach($travelDetails['OtherFeature'] as $feature):
+
+			foreach($passenger['PassengerType']['id'] as $passenger_type):			
+				$fare = $this->ReservationDetail->TravelDetail->OtherFeature->OtherFeaturesPassengerType->find('first',array(
+									'conditions'=>array(
+									'AND'=>	array('OtherFeaturesPassengerType.other_feature_id'=>$feature['id']),
+											array('OtherFeaturesPassengerType.passenger_type_id'=>$passenger_type)
+									)));
+				
+				if(!empty($fare)){
+				$total_feature_price = $total_feature_price + $fare['OtherFeaturesPassengerType']['fare'];
+				}
+
+			endforeach;
+
+		endforeach;
+
 			$this->ReservationDetail->Passenger->create();
 			$this->ReservationDetail->Passenger->save($passenger['Passenger']);
 			
 			$passenger_id = $this->ReservationDetail->Passenger->getLastInsertID();
-			
+		
 			$seats['PurchaseDetail']['passenger_id']=$passenger_id;
-			//need to check total price
-			$seats['PurchaseDetail']['purchase_amt']=$seats['PurchaseDetail']['total_price'];			
+			
+			//need to check total price(bud ticket and other feature)
+			
+			$seats['PurchaseDetail']['purchase_amt']=$seats['PurchaseDetail']['total_price']+$total_feature_price;			
 			
 			$this->ReservationDetail->PurchaseDetail->create();
 			$this->ReservationDetail->PurchaseDetail->save($seats['PurchaseDetail']);
 			$purchase_id = $this->ReservationDetail->PurchaseDetail->getLastInsertID();
 		
 			
-			$seat = explode(',', $seats['ReservationDetail']['selected_seats']);
+			//$seat = explode(',', $seats['ReservationDetail']['selected_seats']);
 			
-				for($a=0;$a<count($seat);$a++)
-				{
+				foreach ($passenger['PassengerType']['id'] as $seat_no => $passenger_type_id) {
+				
 					$this->ReservationDetail->create();
 				
 					$this->ReservationDetail->save($this->ReservationDetail->set(array(
 							'travel_detail_id' => $this->Session->read('travel_detail_id'),
 							'passenger_id' => $passenger_id,
-							'seat_no' =>$seat[$a],
+							'seat_no' =>$seat_no,
 							'purchase_detail_id'=>$purchase_id,
+							'passenger_type_id'=>$passenger_type_id,
 							'depature_date'=> $this->Session->read('depature_date')
 								))
 							);
@@ -255,7 +373,7 @@ class ReservationDetailsController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 	
-	public function seats($travel_detail_id,$depature_date) {
+	/*public function seats($travel_detail_id,$depature_date) {
 		
 		$date = explode('-',$depature_date);
 		$depature_date = $date[0].'/'.$date[1].'/'.$date[2];
@@ -290,5 +408,5 @@ class ReservationDetailsController extends AppController {
 		$this->loadModel('City');
 		$this->set('cities',$this->City->find('all'));
 													
-	}
+	}*/
 }
